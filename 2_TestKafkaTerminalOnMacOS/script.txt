@@ -1,0 +1,33 @@
+#1. Open termnial and type
+--Install kafka/zookeeper and start servers
+$ brew install kafka
+$ brew install zookeeper
+$ zkServer start
+$ kafka-server-start /usr/local/etc/kafka/server.properties
+
+#2. Open other terminal window
+--Create a topic
+$ kafka-topics --create --topic TestTopic --bootstrap-server localhost:9092
+//result: Created topic TestTopic.
+
+$ kafka-topics --create --topic NewTopic --bootstrap-server localhost:9092 
+//result: Created topic NewTopic.
+
+--Check topic
+$ kafka-topics --list --bootstrap-server localhost:9092
+//result: TestTopic
+
+#3. Open 2 Terminal and type 2 command for each Terminal window
+--Terminal 1
+$ kafka-console-producer --topic TestTopic --bootstrap-server localhost:9092
+
+--Terminal 2
+$ kafka-console-consumer --topic TestTopic --from-beginning --bootstrap-server localhost:9092
+
+-- Type 'first line' on Terminal 1 then Terminal 2 show this text
+-- Continue with 'this is the second' and 'Hello World Kafka'
+-- You can type any text to try this.
+
+
+
+

@@ -1,0 +1,8 @@
+. .venv/bin/activate
+
+$ python consumer.py
+
+$ python producer.py
+
+$ python producer.py test.mp4
+
